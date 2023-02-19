@@ -2,7 +2,7 @@
 
 _by Tural Mahmudov <nima.bavari@gmail.com>_
 
-Time taken: 6 hours
+Time taken: 5 hours
 
 ## Notes
 
