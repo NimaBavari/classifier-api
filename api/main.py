@@ -35,14 +35,14 @@ def create_model():
         params = request.json["params"]
         d = request.json["d"]
         n_classes = request.json["n_classes"]
-    except Exception:
+    except KeyError:
         return {"status": "Malformed request"}, 400
     if not isinstance(params, dict):
         return {"status": "Malformed request"}, 400
     params_jsonified = json.dumps(params)
     try:
         model_cls = getattr(classifiers, model)
-    except Exception:
+    except AttributeError:
         return {"status": "Nonexistent model"}, 400
     classifier = model_cls(**params)
     classifier_pickled = pickle.dumps(classifier)
@@ -81,7 +81,7 @@ def train_model(model_id):
     try:
         x = numpy.asarray(request.json["x"]).reshape(1, -1)
         y = request.json["y"]
-    except Exception:
+    except KeyError:
         return {"status": "Malformed request"}, 400
     if not isinstance(y, int):
         return {"status": "Malformed request"}, 400

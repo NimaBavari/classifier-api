@@ -4,12 +4,6 @@ _by Tural Mahmudov <nima.bavari@gmail.com>_
 
 Time taken: 5 hours
 
-## Notes
-
-Before starting, the existing code was linted and formatted, and relieved of typos.
-
-I implemented the bonus endpoint (`GET /models/groups/`) as well, though did not add a test case for that. Please, scroll to the end of `./api/main.py` for the source.
-
 ## Scripts
 
 Run
